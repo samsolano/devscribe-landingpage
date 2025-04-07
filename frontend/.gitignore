@@ -1,0 +1,36 @@
+# Node modules - dependency directory
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Coverage reports (if you're running tests)
+coverage/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotenv environment variable files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Editor and IDE settings
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Optional: Cache directories
+.cache/
