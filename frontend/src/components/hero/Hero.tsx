@@ -18,6 +18,7 @@ const Hero = () => {
 
   async function handleSubmit (e: React.FormEvent) {
     e.preventDefault();
+    console.log("Email submitted:", email);
     // Confetti effect with a mix of vibrant colors, including more yellow tones
     confetti({
       particleCount: 100,
@@ -39,7 +40,7 @@ const Hero = () => {
 
     setStatus('You\'ve joined our waitlist! We\'ll reach out when we\'re live for testing.');
  
-    await fetch('http://devscribe-landingpage-backend.vercel.app/api/resend', {
+    await fetch('https://devscribe-landingpage-backend.vercel.app/api/resend', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
