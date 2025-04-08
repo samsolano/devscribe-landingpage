@@ -1,15 +1,32 @@
-const express = require("express");
-const { Resend } = require("resend");
-// const WelcomeEmail = require("./emails/welcome.jsx");
-import WelcomeEmail from "./emails/Welcome.jsx";
-const cors = require("cors");
+import express from 'express';
+import { Resend } from 'resend';
+import WelcomeEmail from './emails/Welcome.jsx'; // Ensure the case and path match your file
+
+
+
+
+import cors from 'cors';
+import path from 'path';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+
+
+
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
 // Welcome email
 app.post("/api/resend", async (req, res) => {
