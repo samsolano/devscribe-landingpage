@@ -37,16 +37,18 @@ const Hero = () => {
       ]
     });
 
-    // Here you would typically integrate with your email service
     setStatus('You\'ve joined our waitlist! We\'ll reach out when we\'re live for testing.');
-    setEmail('');
-
-    await fetch('/api/emails', {
+ 
+    await fetch('http://localhost:8376/api/resend', {
       method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        name: 'Sam'
+        name: 'Sam',
+        email: email
       })
     })
+
+    setEmail('');
 
 
   }
