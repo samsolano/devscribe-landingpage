@@ -1,6 +1,6 @@
 import express from 'express';
 import { Resend } from 'resend';
-import WelcomeEmail from './emails/welcome.jsx'; // Ensure the case and path match your file
+import WelcomeEmail from './emails/welcome.js'; // Ensure the case and path match your file
 
 
 
@@ -9,6 +9,7 @@ import cors from 'cors';
 import path from 'path';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
+import { pathToFileURL } from 'url';
 import { dirname } from 'path';
 
 
@@ -20,7 +21,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 
-dotenv.config({ path: path.resolve(__dirname, '.env') });
+// dotenv.config({ path: path.resolve(__dirname, '.env') });
+dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
 const app = express();
 
@@ -69,7 +71,7 @@ app.use("/", (req, res) => {
   });
 
   
-  if (require.main === module) {
+  if (import.meta.url === pathToFileURL(process.argv[1]).href) {
     app.listen(8376, () => {
       console.log("Server started on PORT 8376");
     });
