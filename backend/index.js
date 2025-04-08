@@ -50,8 +50,15 @@ app.post("/api/resend", async (req, res) => {
 app.use("/", (req, res) => {
     res.send("Server is running.");
   });
-  
 
-app.listen(8376, () => {
-  console.log("Server started on PORT 8376");
-});
+  
+  if (require.main === module) {
+    app.listen(8376, () => {
+      console.log("Server started on PORT 8376");
+    });
+  }
+  
+export default app;
+
+
+// update api path in frontend, add vercel.json file in backend
