@@ -1,6 +1,6 @@
 import express from 'express';
 import { Resend } from 'resend';
-import WelcomeEmail from './emails/Welcome.jsx'; // Ensure the case and path match your file
+import WelcomeEmail from './emails/welcome.jsx'; // Ensure the case and path match your file
 
 
 
