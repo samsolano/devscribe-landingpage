@@ -1,6 +1,4 @@
 {
     "version": 2,
-    
     "routes": [{"src": "/(.*)", "dest": "/"}],
-    "random": "\"builds\": [{\"src\": \"./dist/index.js\", \"use\": \"@vercel/node\"}],"
 }
