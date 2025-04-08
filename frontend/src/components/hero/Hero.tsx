@@ -39,7 +39,7 @@ const Hero = () => {
 
     setStatus('You\'ve joined our waitlist! We\'ll reach out when we\'re live for testing.');
  
-    await fetch('http://localhost:8376/api/resend', {
+    await fetch('http://devscribe-landingpage-backend.vercel.app/api/resend', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
