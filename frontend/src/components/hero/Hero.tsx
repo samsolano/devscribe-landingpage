@@ -39,6 +39,10 @@ const Hero = () => {
     });
 
     setStatus('You\'ve joined our waitlist! We\'ll reach out when we\'re live for testing.');
+
+  //   curl -L -X POST http://devscribe-landingpage-backend.vercel.app/api/resend \
+  // -H "Content-Type: application/json" \
+  // -d '{"email": "devscribeteam@gmail.com", "name": "Sam"}'
  
     await fetch('https://devscribe-landingpage-backend.vercel.app/api/resend', {
       method: 'POST',
